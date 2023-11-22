@@ -1,0 +1,8 @@
+- hosts: all
+  become: yes
+  roles:
+    - role: geerlingguy.pip
+      vars:
+        pip_install_packages:
+          - name: docker
+            state: latest
