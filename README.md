@@ -3,17 +3,17 @@
 
 ## Getting start
 ### Preparing web servers:
-1. Check availability of machines:
+1. Add variables into group_vars directory in accordance with example files.        
+
+2. Check availability of machines:
 ```bash
 make check-webservers
 ```
-
-2. Install needed requirement:
+3. Install needed requirement:
 ```bash
 make install-requirements
 ```
-
-3. Prepare webservers before running the app:
+4. Prepare webservers before running the app:
 ```bash
 prepare-webservers
 ```
