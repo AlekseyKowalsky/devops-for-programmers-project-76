@@ -1,9 +1,8 @@
-check-all-machines:
+check-webservers:
 	ansible all -m ping -i ./inventory.yml
 
-install-ansible-requirements:
+install-requirements:
 	ansible-galaxy install -r requirements.yml
 
-prepare-all-machines:
-	$(MAKE) install-ansible-requirements
+prepare-webservers:
 	ansible-playbook playbook.yml -i inventory.yml
