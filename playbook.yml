@@ -8,3 +8,4 @@
         pip_install_packages:
           - name: docker
             state: latest
+    - role: geerlingguy.docker
