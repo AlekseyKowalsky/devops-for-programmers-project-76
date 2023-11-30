@@ -4,5 +4,8 @@ check-webservers:
 install-requirements:
 	ansible-galaxy install -r requirements.yml
 
-prepare-webservers:
-	ansible-playbook playbook.yml -i inventory.yml
+setup-webservers:
+	ansible-playbook setup.yml -i inventory.yml
+
+deploy-webservers:
+	ansible-playbook deploy.yml -i inventory.yml

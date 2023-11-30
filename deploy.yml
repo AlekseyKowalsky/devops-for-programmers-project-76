@@ -1,0 +1,38 @@
+- name: deploy and run redmine docker container
+  hosts: all
+  become: yes
+  vars_files:
+    - group_vars/hosts.yml
+    - group_vars/redmine.yml
+  tasks:
+    - name: generate .env file from template
+      template:
+        src: redmine.env.j2
+        dest: .env
+
+    - name: pull redmine docker image
+      docker_image:
+        name: redmine:latest
+        source: pull
+
+    - name: run redmine docker container
+      docker_container:
+        name: redmine_container
+        image: redmine:latest
+        ports:
+          - "{{ REDMINE_PORT }}:3000"
+        restart_policy: always
+      register: redmine_container
+
+    - name: verify redmine container is running
+      assert:
+        that:
+          - redmine_container is defined
+          - redmine_container.container.State.Running
+        fail_msg: "Redmine container is not running"
+        success_msg: "Redmine container is running"
+
+    - name: Debugging output
+      debug:
+        var: redmine_container
+      when: redmine_container is failed
