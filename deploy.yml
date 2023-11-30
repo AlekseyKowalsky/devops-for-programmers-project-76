@@ -2,12 +2,11 @@
   hosts: all
   become: yes
   vars_files:
-    - group_vars/hosts.yml
-    - group_vars/redmine.yml
+    - group_vars/webservers/vault.decrypted.yml
   tasks:
     - name: generate .env file from template
       template:
-        src: redmine.env.j2
+        src: .env.j2
         dest: .env
 
     - name: pull redmine docker image

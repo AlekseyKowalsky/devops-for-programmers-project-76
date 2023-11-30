@@ -5,7 +5,15 @@
 https://alekspaces.com
 ## Getting start
 ### Preparing web servers:
-1. Add variables into group_vars directory in accordance with example files.        
+1. Actualize secrets in the [group_vars/webservers directory](group_vars%2Fwebservers):
+- place there `.vault_pass` text file with the vault password inside
+- use make commands to encrypt/decrypt vault secrets in order to change them:
+```bash
+ make encrypt-vault
+```
+```bash
+ make decrypt-vault
+```
 
 2. Check availability of machines:
 ```bash

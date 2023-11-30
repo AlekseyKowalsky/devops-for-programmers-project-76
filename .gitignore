@@ -1,0 +1,2 @@
+group_vars/webservers/vault.decrypted.yml
+group_vars/webservers/.vault_pass

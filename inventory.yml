@@ -1,8 +1,8 @@
 webservers:
   hosts:
     machine1:
-      ansible_host: "{{ ip_1 }}"
+      ansible_host: "{{ IP1 }}"
       ansible_user: root
     machine2:
-      ansible_host: "{{ ip_2 }}"
+      ansible_host: "{{ IP2 }}"
       ansible_user: root
