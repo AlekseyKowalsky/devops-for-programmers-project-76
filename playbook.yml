@@ -12,6 +12,10 @@
         name: redmine:latest
         source: pull
 
+    - name: Debug REDMINE_PORT
+      debug:
+        msg: "REDMINE_PORT value is {{ REDMINE_PORT }}"
+
     - name: run redmine docker container
       community.docker.docker_container:
         name: redmine_container
