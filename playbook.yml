@@ -1,6 +1,8 @@
 - name: deploy and run redmine docker container
   hosts: all
   become: yes
+  vars:
+    REDMINE_PORT: 3000
   tasks:
     - name: generate .env file from template
       template:
