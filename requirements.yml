@@ -7,3 +7,5 @@ roles:
 collections:
   - name: datadog.dd
     version: 5.0.1
+  - name: community.docker
+    version: 3.4.11

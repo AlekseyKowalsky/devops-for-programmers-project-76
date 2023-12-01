@@ -10,12 +10,12 @@
         dest: .env
 
     - name: pull redmine docker image
-      docker_image:
+      community.docker.docker_image:
         name: redmine:latest
         source: pull
 
     - name: run redmine docker container
-      docker_container:
+      community.docker.docker_container:
         name: redmine_container
         image: redmine:latest
         ports:
