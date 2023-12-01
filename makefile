@@ -10,7 +10,7 @@ setup-webservers:
 	ansible-playbook setup.yml -i inventory.yml --vault-password-file $(VAULT_PASSWORD_FILE)
 
 deploy-webservers:
-	ansible-playbook deploy.yml -i inventory.yml --vault-password-file $(VAULT_PASSWORD_FILE)
+	ansible-playbook playbook.yml -i inventory.yml --vault-password-file $(VAULT_PASSWORD_FILE)
 
 decrypt-vault:
 	ansible-vault decrypt group_vars/webservers/vault.yml --output=group_vars/webservers/vault.decrypted.yml --vault-password-file $(VAULT_PASSWORD_FILE)
