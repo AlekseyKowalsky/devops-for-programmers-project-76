@@ -1,8 +1,6 @@
 - name: deploy and run redmine docker container
   hosts: all
   become: yes
-  vars_files:
-    - group_vars/webservers/vault.yml
   tasks:
     - name: generate .env file from template
       template:

@@ -1,7 +1,7 @@
 VAULT_PASSWORD_FILE := group_vars/webservers/.vault_pass
 
 check-webservers:
-	ansible all -m ping -i ./inventory.yml --extra-vars "@group_vars/webservers/vault.yml" --vault-password-file $(VAULT_PASSWORD_FILE)
+	ansible all -m ping -i ./inventory.yml --vault-password-file $(VAULT_PASSWORD_FILE)
 
 install-requirements:
 	ansible-galaxy install -r requirements.yml

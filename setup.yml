@@ -1,8 +1,6 @@
 - name: setup the application servers
   hosts: all
   become: yes
-  vars_files:
-    - group_vars/webservers/vault.yml
   roles:
     - role: geerlingguy.pip
       vars:
