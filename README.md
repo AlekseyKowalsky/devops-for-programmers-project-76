@@ -4,6 +4,9 @@
 ### The application web address:
 https://alekspaces.com
 ## Getting start
+### Requirements:
+- OS: Linux
+- Installed tools: Make, Ansible
 ### Preparing web servers:
 1. Actualize secrets in the [group_vars/webservers directory](group_vars%2Fwebservers):
 - place there `.vault_pass` text file with the vault password inside
