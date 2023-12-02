@@ -7,7 +7,6 @@
         pip_install_packages:
           - name: docker
             state: latest
-    - role: geerlingguy.docker
 
 - name: install datadog agent on servers
   hosts: webservers
