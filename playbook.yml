@@ -17,7 +17,7 @@
     - name: run redmine docker container
       community.docker.docker_container:
         name: redmine_container
-        image: redmine:latest
+        image: redmine:5.1.1
         ports:
           - "{{ REDMINE_PORT }}:3000"
         restart_policy: always
