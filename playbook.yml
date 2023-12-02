@@ -9,11 +9,6 @@
         src: templates/.env.j2
         dest: .env
 
-    - name: pull redmine docker image
-      community.docker.docker_image:
-        name: redmine:latest
-        source: pull
-
     - name: run redmine docker container
       community.docker.docker_container:
         name: redmine_container
